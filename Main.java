@@ -35,18 +35,20 @@ class Main{
 					switch(operadores.pop()){
 
 						case 42:
-						char resultado = ' ';
+						int resultado = 0;
 						if(op1*op2<=9){
-							resultado = (char)(op1*op2);
-	
+							resultado = (op1*op2)+48;
 						}
+
 						else{
-							 resultado =(char)(op1*op2);
+							 resultado =(op1*op2);
 						}
 						
 						digits.push((char)resultado);
-						// System.out.println((char)resultado);
-						// System.out.println(Integer.toString(resultado));
+						if(parentesis.isEmpty() && i==tamanio-1  && resultado>9){
+							System.out.println(Integer.toString(resultado));
+							// digits.resultado();
+						}
 						break;
 	
 						case 43:
@@ -60,15 +62,15 @@ class Main{
 						}
 						
 						digits.push((char)resultado2);
-						// System.out.println((char)resultado2);
-						// System.out.println(Integer.toString(resultado2));
+						if(parentesis.isEmpty() && i==tamanio-1  && resultado2>9){
+							System.out.println(Integer.toString(resultado2));
+							// digits.resultado();
+						}
 						break;
 	
 						case 45:
-						
 						int resultado3 = 0;
 						if((op1-op2)<=9){
-	
 							resultado3=(op1-op2)+48;
 						}
 	
@@ -76,9 +78,12 @@ class Main{
 							resultado3 = (op1-op2);
 						}
 						digits.push((char)resultado3);
-						// System.out.println((char)resultado3);
+						if(parentesis.isEmpty() && i==tamanio-1  && resultado3>9){
+							System.out.println(Integer.toString(resultado3));
+							// digits.resultado();
+						}
 						break;
-	
+
 						case 47:
 						
 						int resultado4 = 0;
@@ -88,9 +93,14 @@ class Main{
 						else{
 							resultado4=(op1/op2);
 						}
-						// System.out.println(resultado4);
+
+						if(parentesis.isEmpty() && i==tamanio-1 && resultado4>9){
+							System.out.println(Integer.toString(resultado4));
+							// digits.resultado();
+						}
+						
 						digits.push((char)resultado4);
-						// System.out.println((char)resultado4);
+						
 						break;
 	
 						default:
@@ -100,7 +110,7 @@ class Main{
 			
 
 				if(parentesis.isEmpty() && i==tamanio-1){
-					System.out.println("hola");
+					// System.out.println("final");
 					digits.resultado();
 				}
 			}
