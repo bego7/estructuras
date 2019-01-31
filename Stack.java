@@ -3,23 +3,23 @@
 class Stack{
 	
 	// atributos
-	char arreglo[];
+	int arreglo[];
 	int size;
 
 	// constructor
 	public Stack(int tam){
-		arreglo = new char [tam];
+		arreglo = new int [tam];
 		size = 0;
 	}
 
-	public void push(char valor){
+	public void push(int valor){
 		arreglo[size] = valor;
 		// System.out.println("pushee al arreglo el valor "+ valor);
 		size++;	
 	}
 
-	public char pop(){
-		char fuera = arreglo[size-1];
+	public int pop(){
+		int fuera = arreglo[size-1];
 		arreglo[size-1]=0;
 		// System.out.println("pop "+ fuera);
 		size--;
@@ -28,7 +28,7 @@ class Stack{
 
 	public void resultado(){
 		// System.out.println("quiero dar el resultado");
-		char fuera = arreglo[size-1];
+		int fuera = arreglo[size-1];
 		System.out.println(fuera);
 	}
 	
