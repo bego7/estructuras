@@ -1,31 +1,36 @@
+
+
 class Stack{
 	
-	char arreglo[] = new char [1000];
+	// atributos
+	char arreglo[];
+	int size;
+
+	// constructor
+	public Stack(int tam){
+		arreglo = new char [tam];
+		size = 0;
+	}
 
 	public void push(char valor){
-		for(int i =0;i<arreglo.length;i++){
-			if(arreglo[i]==0){
-				arreglo[i]= valor;
-				System.out.println(Integer.toString(valor));
-				break;
-			}
-		}
+		arreglo[size] = valor;
+		System.out.println("pushee al arreglo el valor "+ valor);
+		size++;	
 	}
 
 	public char pop(){
-		char fuera = ' ';
-		for(int n=arreglo.length-1;n>=0;n--){
-			if(arreglo[n]!=0){
-				fuera= arreglo[n];
-				arreglo[n]=0;
-				System.out.println(" Saque del stack en "+ n);
-				break;
-			}
-		}
-
+		char fuera = arreglo[size-1];
+		arreglo[size-1]=0;
+		System.out.println("pop "+ fuera);
+		size--;
 		return fuera;
 	}
 
+	public void resultado(){
+		System.out.println("quiero dar el resultado");
+		char fuera = arreglo[size-1];
+		System.out.println(fuera);
+	}
 	// int op2=0;
 	// 			for(int n=digits.length-1;n>=0;n--){
 	// 				if(digits[n]!=0){
